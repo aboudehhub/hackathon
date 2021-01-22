@@ -11,23 +11,30 @@
 </head>
 
 <body>
-    <ul>
-        <li><a id="icon" href="#">College finder</a></li>
-        <li><a href="Chats">Chats</a></li>
-        <li><a href="HowItWorks">How it works</a></li>
-        <li style="float:right"><a href="About">About</a></li>
-    </ul>
     <div id="main">
-        <p>College finder</p>
+        <p class="logo">College Finder</p>
         <form onsubmit="event.preventDefault();" role="search">
             <input id="search" placeholder="Search for colleges..." autofocus required />
             <button type="submit">{%include "MainPage/searchIcon.html"%}</button>
         </form>
         <div id="fun">
-            <a href="#">advanced search</a>
-            <a href="#">random college near you!</a>
+            <a class="linktext" href="#">advanced search</a>
+            <a class="linktext" href="#">random college near you!</a>
         </div>
+        <table class="hidden">
+            <tr>
+                <th>Name</th>
+                <th>location</th>
+                <th>idk</th>
+            </tr>
+        </table>
     </div>
+    <ul>
+        <li><a class="linktext" href="Chats">Chats</a></li>
+        <li><a class="linktext" href="HowItWorks">How it works</a></li>
+        <li><a class="linktext" href="About">About</a></li>
+    </ul>
+
     <script src="{% static '/javascript/main.js' %}"></script>
 </body>
 

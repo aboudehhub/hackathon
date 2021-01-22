@@ -1,12 +1,6 @@
 :root {
-  --rad: 0.7rem;
-  --dur: 0.3s;
   --color-dark: #333;
   --color-light: #fdfbfb;
-  --font-fam: ;
-  --height: 5rem;
-  --btn-width: 6rem;
-  --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
 body,
 html {
@@ -22,34 +16,29 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: var(--color-dark);
   border-bottom: 1px solid #000;
-  box-shadow: 0px 2px 5px #000;
+  box-shadow: 0px -1px 0px #000;
 }
-li {
+li:not(:last-child) {
   float: left;
+  border-right: 1px solid var(--color-dark);
 }
-li a {
-  text-shadow: -2px 0px 1px #000;
+li:last-child {
+  float: right;
+  border-left: 1px solid var(--color-dark);
+}
+.linktext {
   display: block;
-  color: var(--color-light);
+  color: var(--color-dark);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  letter-spacing: -0.5px;
-  line-height: 2vw;
   font-size: 1.5vw;
 }
-li a:hover {
-  background-color: #111;
-}
-#icon {
-  border-right: 1px solid #000;
-  font-size: 2vw;
-  word-spacing: -1px;
-}
-#icon:hover {
-  background-color: #333;
+.linktext:hover {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  text-decoration: underline;
 }
 #main {
   padding: 0;
@@ -60,35 +49,32 @@ li a:hover {
   flex-flow: column;
   height: 100vh;
 }
-#main p {
-  margin: 0;
-  position: relative;
-  top: -50px;
-  color: var(--color-dark);
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  width: 45%;
+#main > * {
+  margin: 10px;
 }
 form {
-  display: flex;
-  position: absolute;
   width: 35%;
   flex-flow: column;
+  position: relative;
 }
 form input {
   border-radius: 20px;
-  flex-grow: 1;
   border: 2px solid var(--color-dark);
   outline: none;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 2px 3px #000;
 }
 form button {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 2;
+  transform: translateX(7px);
   border: none;
   outline: none;
-  position: absolute;
   cursor: pointer;
-  right: 0px;
-  height: 21px;
+  height: 123%;
   background-color: var(--color-dark);
   color: var(--color-light);
   border-bottom-right-radius: 20px;
@@ -103,17 +89,20 @@ form button {
   font-size: 0.9em;
 }
 #main #fun a {
-  color: var(--color-dark);
-  font-size: 1.5vw;
+  padding: 2px 5px 2px 5px;
+  border: 1px solid var(--color-dark);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px #000;
 }
-#main #fun a:hover{
-  color: red;
+.logo {
+  margin: 0;
+  font-size: 8vw;
+  letter-spacing: -.6vw;
+  word-spacing: -1.5vw;
 }
-.tag {
-  font-size: 3vw;
+svg:hover {
+  cursor: pointer;
 }
-#quote {
-  position: relative;
-  top: -15%;
-  font-size: 1.5vw;
+.hidden {
+  display: none;
 }

@@ -1,0 +1,119 @@
+:root {
+  --rad: 0.7rem;
+  --dur: 0.3s;
+  --color-dark: #333;
+  --color-light: #fdfbfb;
+  --font-fam: ;
+  --height: 5rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+body,
+html {
+  margin: 0;
+  background-color: var(--color-light);
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  min-width: 400px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-dark);
+  border-bottom: 1px solid #000;
+  box-shadow: 0px 2px 5px #000;
+}
+li {
+  float: left;
+}
+li a {
+  text-shadow: -2px 0px 1px #000;
+  display: block;
+  color: var(--color-light);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  line-height: 2vw;
+  font-size: 1.5vw;
+}
+li a:hover {
+  background-color: #111;
+}
+#icon {
+  border-right: 1px solid #000;
+  font-size: 2vw;
+  word-spacing: -1px;
+}
+#icon:hover {
+  background-color: #333;
+}
+#main {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  height: 100vh;
+}
+#main p {
+  margin: 0;
+  position: relative;
+  top: -50px;
+  color: var(--color-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 45%;
+}
+form {
+  display: flex;
+  position: absolute;
+  width: 35%;
+  flex-flow: column;
+}
+form input {
+  border-radius: 20px;
+  flex-grow: 1;
+  border: 2px solid var(--color-dark);
+  outline: none;
+  box-shadow: 0 2px 3px #000;
+}
+form button {
+  border: none;
+  outline: none;
+  position: absolute;
+  cursor: pointer;
+  right: 0px;
+  height: 21px;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#main #fun {
+  display: grid;
+  width: 35%;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  justify-content: space-evenly;
+  font-size: 0.9em;
+}
+#main #fun a {
+  color: var(--color-dark);
+  font-size: 1.5vw;
+}
+#main #fun a:hover{
+  color: red;
+}
+.tag {
+  font-size: 3vw;
+}
+#quote {
+  position: relative;
+  top: -15%;
+  font-size: 1.5vw;
+}

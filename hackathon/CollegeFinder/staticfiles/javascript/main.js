@@ -1,0 +1,1 @@
+var quotes = document.getElementsByTagName("hm")

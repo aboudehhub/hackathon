@@ -1,0 +1,56 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/ASearch.css' %}">
+    <title>Home</title>
+</head>
+
+<body>
+    <div id="main">
+        <p class="logo">College Finder</p>
+        <form id="search" method="get" role="search">
+            {% comment %} <input id="search" placeholder="Search for colleges..." autofocus /> {% endcomment %}
+            {{MFilter.form}}
+            {{AFilter.form}}
+            <button type="submit">{%include "MainPage/searchIcon.html"%}</button>
+        </form>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>location</th>
+                <th>phone number</th>
+                <th>graduation rate</th>
+                <th>acceptance rate</th>
+                <th>faculties</th>
+            </tr>
+            {%for college in colleges%}
+                <tr>
+                    <td style="text-transform: none"><a class="linktext" id="cw" href="{{college.website}}">{{college.name}}</td>
+                    <td style="text-transform: capitalize">{{college.location}}</td>
+                    <td>{{college.number}}</td>
+                    <td>{{college.graduationRate}}%</td>
+                    <td>{{college.acceptanceRate}}%</td>
+                    <td>{% for faculty in college.faculties.all %}
+                            {{ faculty.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+    </div>
+    <ul>
+        <li><a class="linktext" href="Chats">Chats</a></li>
+        <li><a class="linktext" href="HowItWorks">How it works</a></li>
+        <li><a class="linktext" href="About">About</a></li>
+    </ul>
+
+    <script src="{% static '/javascript/main.js' %}"></script>
+</body>
+
+</html>

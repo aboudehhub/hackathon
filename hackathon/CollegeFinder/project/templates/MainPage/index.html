@@ -13,21 +13,39 @@
 <body>
     <div id="main">
         <p class="logo">College Finder</p>
-        <form onsubmit="event.preventDefault();" role="search">
-            <input id="search" placeholder="Search for colleges..." autofocus required />
+        <form id="search" method="get" role="search">
+            {% comment %} <input id="search" placeholder="Search for colleges..." autofocus /> {% endcomment %}
+            {{MFilter.form}}
             <button type="submit">{%include "MainPage/searchIcon.html"%}</button>
         </form>
         <div id="fun">
-            <a class="linktext" href="#">advanced search</a>
-            <a class="linktext" href="#">random college near you!</a>
+            <a class="linktext" href="ASearch">advanced search</a>
+            <a class="linktext">random college near you!</a>
         </div>
-        <table class="hidden">
+        <table>
             <tr>
                 <th>Name</th>
                 <th>location</th>
-                <th>idk</th>
+                <th>phone number</th>
+                <th>graduation rate</th>
+                <th>acceptance rate</th>
+                <th>faculties</th>
             </tr>
+            {%for college in colleges%}
+                <tr>
+                    <td style="text-transform: none"><a class="linktext" id="cw" href="{{college.website}}">{{college.name}}</td>
+                    <td style="text-transform: capitalize">{{college.location}}</td>
+                    <td>{{college.number}}</td>
+                    <td>{{college.graduationRate}}%</td>
+                    <td>{{college.acceptanceRate}}%</td>
+                    <td>{% for faculty in college.faculties.all %}
+                            {{ faculty.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}</td>
+                </tr>
+            {% endfor %}
         </table>
+
+
     </div>
     <ul>
         <li><a class="linktext" href="Chats">Chats</a></li>
@@ -36,6 +54,22 @@
     </ul>
 
     <script src="{% static '/javascript/main.js' %}"></script>
+    <script type="text/javascript">
+        $(document).on('submit', '#search', function(e){
+            e.preventDefault();
+
+            $.ajax({
+                type:'POST',
+                url: '/?name=',
+                data: {
+                    name: $('#id_name').val()
+                },
+                success:function(){
+
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

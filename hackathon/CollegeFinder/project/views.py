@@ -30,3 +30,12 @@ def HowItWorks(request):
 
 def About(request):
     return HttpResponse("About")
+
+def Register(request):
+    return render(request, "Users/register.html")
+
+def Login(request):
+    return render(request, "Users/login.html")
+
+def Crud(request):
+    return render(request, "crud/create.html")

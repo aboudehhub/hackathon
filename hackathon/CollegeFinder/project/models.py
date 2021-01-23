@@ -4,8 +4,9 @@ from django.core.validators import MaxValueValidator, MinValueValidator, URLVali
 
 class Degree(models.Model):
     name = models.CharField(max_length=100, null=True)
-    faculty = models.ForeignKey('Facultie', on_delete=models.CASCADE, blank=True)
+    faculty = models.ForeignKey('Facultie', on_delete=models.CASCADE, blank=True, default=0)
     preReq = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+    jobs = models.ManyToManyField('Job', blank=True, default='homeless')
     def __str__(self):
         return self.name
 
@@ -20,7 +21,7 @@ class Facultie(models.Model):
 class Job(models.Model):
     name = models.CharField(max_length=100, null=True)
     avgSalary = models.IntegerField(null=True)
-    degree = models.ForeignKey(Degree, on_delete=models.CASCADE)
+    reqDegree = models.ForeignKey(Degree, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -46,6 +47,7 @@ class College(models.Model):
     acceptanceRate = models.DecimalField(max_digits=5, decimal_places=2, validators=[
                                          MaxValueValidator(100), MinValueValidator(1)], blank=True, null=True)
     faculties = models.ManyToManyField(Facultie)
+    degrees = models.ManyToManyField(Degree)
     deans = models.ManyToManyField(Dean)
 
     def __str__(self):

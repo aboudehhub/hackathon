@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Phone number</th>
+        <th>Graduation rate</th>
+        <th>Acceptance rate</th>
+        <th>Faculties</th>
+    </tr>
+    {%for college in colleges%}
+        <tr>
+            <td style="text-transform: none"><a class="linktext" id="cw" href="{{college.website}}">{{college.name}}</td>
+            <td style="text-transform: capitalize">{{college.location}}</td>
+            <td>{{college.number}}</td>
+            <td>{{college.graduationRate}}%</td>
+            <td>{{college.acceptanceRate}}%</td>
+            <td>{% for faculty in college.faculties.all %}
+                    {{ faculty.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}</td>
+        </tr>
+    {% endfor %}
+</table>

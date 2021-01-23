@@ -1,0 +1,30 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    <title>Home</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="user">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg">
+            <span>obama</span>
+        </div>
+        <p class="logo">College Finder</p>
+        {% block content %}
+        
+        
+        {% endblock%}
+        {% include 'tables/collegeTable.html' %}
+
+        {% include 'MainPage/navBar.html' %}
+    </div>
+</body>
+
+</html>

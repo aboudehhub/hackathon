@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Average Salary</th>
+        <th>Required Degree</th>
+    </tr>
+    {%for job in jobs%}
+        <tr>
+            <td style="text-transform: none">{{job.name}}</td>
+            <td style="text-transform: capitalize">{{job.avgSalary}}</td>
+            <td>{{job.reqDegree}}</td>
+        </tr>
+    {% endfor %}
+</table>

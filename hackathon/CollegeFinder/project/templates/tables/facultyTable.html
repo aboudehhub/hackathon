@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Degrees</th>
+    </tr>
+    {%for faculty in faculties%}
+        <tr>
+            <td style="text-transform: none">{{faculty.name}}</td>
+            <td>{% for degree in faculty.degrees.all %}
+                    {{ degree.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}</td>
+        </tr>
+    {% endfor %}
+</table>

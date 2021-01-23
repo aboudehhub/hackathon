@@ -5,171 +5,43 @@
 * {
   font-family: 'Times New Roman', Times, serif;
 }
-body,
-html {
-  margin: 0;
-  background-color: var(--color-light);
-  display: flex;
-  flex-flow: column;
+#Asearch {
+  width: 30%;
   height: 100%;
-  min-width: 400px;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid #000;
-  box-shadow: 0px -1px 5px #000;
-}
-li:not(:last-child) {
-  float: left;
-  border-right: 1px solid var(--color-dark);
-}
-li:last-child {
-  float: right;
-  border-left: 1px solid var(--color-dark);
-}
-.linktext {
-  display: block;
-  background-color: #efefef;
-  color: var(--color-dark);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 1.5vw;
-}
-.linktext:hover {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  text-decoration: underline;
-  cursor: pointer;
-}
-#cw {
-  padding: 2px;
-}
-#main {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
-  height: 100vh;
-}
-#main > * {
-  margin: 10px;
-}
-form {
-  width: 35%;
-  flex-flow: column;
   position: relative;
   display: flex;
   flex-flow: column;
+  flex-grow: 1;
   align-items: center;
   border: 1px solid var(--color-dark);
   border-radius: 2px;
   background-color: #efefef;
   box-shadow: 0 2px 3px #000;
 }
-form * {
+#Asearch *:not(label) {
   margin: 10px;
+  width: 50%;
 }
-form label {
+#Asearch label {
   margin: 0;
   color: var(--color-dark);
   font-weight: bold;
   font-size: 1.2vw;
 }
-form input {
+#Asearch input {
   border-radius: 20px;
   border: 2px solid var(--color-dark);
   outline: none;
   width: 90%;
   box-shadow: 0 2px 3px #000;
 }
-form button {
+#Asearch select{
+  overflow: scroll;
+}
+#Asearch button {
   width: 10%;
   border-radius: 5px;
   background-color: var(--color-dark);
   cursor: pointer;
   box-shadow: 0 2px 3px #000;
-}
-#main #fun {
-  display: grid;
-  width: 35%;
-  grid-template-columns: auto auto;
-  grid-gap: 10px;
-  justify-content: space-evenly;
-  font-size: 0.9em;
-}
-#main #fun a {
-  padding: 2px 5px 2px 5px;
-  border: 1px solid var(--color-dark);
-  border-radius: 2px;
-  outline: none;
-  box-shadow: 0 1px 2px #000;
-}
-.logo {
-  margin: 0;
-  font-size: 8vw;
-  letter-spacing: -0.6vw;
-  word-spacing: -1.5vw;
-}
-table {
-  border-collapse: collapse;
-  width: 50%;
-}
-td,
-th {
-  border: 1px solid #000;
-  text-align: center;
-  padding: 8px;
-  font-weight: bolder;
-}
-th {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-}
-tr:not(:nth-child(even)) {
-  background-color: var(--color-light);
-}
-tr:nth-child(even) {
-  background-color: #fff;
-}
-tr:hover {
-  background-color: rgb(236, 236, 236);
-}
-td {
-  text-transform: lowercase;
-}
-
-#filter {
-  display: flex;
-  text-align: center;
-  flex-flow: column wrap;
-  flex-shrink: 1;
-  flex-basis: 1;
-  margin: 5px;
-  text-align: center;
-  align-items: center;
-}
-#filter label {
-  font-size: 1.5vw;
-  color: var(--color-dark);
-  margin: 5px;
-  text-decoration: underline;
-}
-#filter input {
-  border-radius: 20px;
-  border: 2px solid var(--color-dark);
-  outline: none;
-  width: 40%;
-  box-shadow: 0 2px 3px #000;
-}
-
-.hidden * {
-  display: none;
-}
-.hidden {
-  display: none;
 }

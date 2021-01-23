@@ -4,7 +4,15 @@ from . import views
 urlpatterns = [
     path('', views.Home),
     path('ASearch/', views.ASearch),
-    path('Chats/', views.Chats),
-    path('HowItWorks/', views.HowItWorks),
-    path('About/', views.About),
+    path('chats/', views.Chats),
+    path('howItWorks/', views.HowItWorks),
+    path('about/', views.About),
+    path('register/', views.Register),
+    path('login/', views.Login),
+    path('crud/', views.Crud),
+    path('College/', views.CollegeP),
+    path('Faculty/', views.FacultyP),
+    path('Degree/', views.DegreeP),
+    path('Job/', views.JobP), 
+    path('Dean/', views.DeanP),
 ]

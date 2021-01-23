@@ -4,6 +4,7 @@
 }
 * {
   font-family: 'Times New Roman', Times, serif;
+  margin: 0;
 }
 body,
 html {
@@ -15,12 +16,17 @@ html {
   min-width: 400px;
 }
 ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  background-color: var(--color-light);
+  position: fixed;
+  bottom: -10px;
+  list-style-type: none;
   border-top: 1px solid #000;
   box-shadow: 0px -1px 5px #000;
+  width: 100%;
 }
+li{margin: 0;}
 li:not(:last-child) {
   float: left;
   border-right: 1px solid var(--color-dark);
@@ -44,7 +50,7 @@ li:last-child {
   text-decoration: underline;
   cursor: pointer;
 }
-#cw{
+#cw {
   padding: 2px;
 }
 #main {
@@ -54,20 +60,20 @@ li:last-child {
   align-items: center;
   justify-content: center;
   flex-flow: column;
-  height: 100vh;
+  height: fit-content;
 }
 #main > * {
   margin: 10px;
 }
-form {
+#search {
   width: 35%;
   flex-flow: column;
   position: relative;
 }
-label[for="id_name"]{
+#search label[for='id_name'] {
   display: none;
 }
-#id_name{
+#search #id_name {
   border-radius: 20px;
   border: 2px solid var(--color-dark);
   outline: none;
@@ -75,7 +81,7 @@ label[for="id_name"]{
   height: 100%;
   box-shadow: 0 2px 3px #000;
 }
-form button {
+#search button {
   position: absolute;
   top: 0;
   right: 0px;
@@ -91,12 +97,12 @@ form button {
   border-top-right-radius: 20px;
 }
 #main #fun {
-  display: grid;
-  width: 35%;
-  grid-template-columns: auto auto;
-  grid-gap: 10px;
-  justify-content: space-evenly;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
   font-size: 0.9em;
+  width: 35%;
 }
 #main #fun a {
   padding: 2px 5px 2px 5px;
@@ -104,6 +110,13 @@ form button {
   border-radius: 2px;
   outline: none;
   box-shadow: 0 1px 2px #000;
+  width: 70%
+}
+#main #fun span{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .logo {
   margin: 0;
@@ -114,6 +127,7 @@ form button {
 table {
   border-collapse: collapse;
   width: 50%;
+  margin-bottom: 20px;
 }
 td,
 th {
@@ -135,37 +149,29 @@ tr:nth-child(even) {
 tr:hover {
   background-color: rgb(236, 236, 236);
 }
-td{
+td {
   text-transform: lowercase;
 }
-
-#filter {
+#user {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
-  text-align: center;
-  flex-flow: column wrap;
-  flex-shrink: 1;
-  flex-basis: 1;
-  margin: 5px;
-  text-align: center;
+  flex-flow: column;
   align-items: center;
 }
-#filter label {
-  font-size: 1.5vw;
-  color: var(--color-dark);
+#user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0px 10px var(--color-dark);
+}
+#user span {
+  padding: 2px;
   margin: 5px;
-  text-decoration: underline;
-}
-#filter input {
-  border-radius: 20px;
-  border: 2px solid var(--color-dark);
-  outline: none;
-  width: 40%;
+  color: var(--color-dark);
+  font-weight: bold;
+  border: 1px solid var(--color-dark);
+  border-radius: 2px;
   box-shadow: 0 2px 3px #000;
-}
-
-.hidden * {
-  display: none;
-}
-.hidden {
-  display: none;
 }

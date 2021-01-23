@@ -1,6 +1,6 @@
 from django.db.models import fields
 import django_filters
-from django_filters import CharFilter
+from django_filters import CharFilter, MultipleChoiceFilter
 from .models import *
 
 class MainFilter(django_filters.FilterSet):
@@ -12,5 +12,4 @@ class MainFilter(django_filters.FilterSet):
 class AFilter(django_filters.FilterSet):
     class Meta:
         model = College
-        fields = '__all__'
-        exclude = ['name', 'website', 'number', 'graduationRate', 'acceptanceRate', 'deans']
+        fields = ['location', 'faculties', 'degrees']

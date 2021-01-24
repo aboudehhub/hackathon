@@ -1,18 +1,18 @@
 <table>
     <tr>
         <th>Name</th>
-        <th>location</th>
-        <th>phone number</th>
-        <th>graduation rate</th>
-        <th>acceptance rate</th>
-        <th>faculties</th>
+        <th>Email</th>
+        <th>College</th>
+        <th>faculty</th>
     </tr>
     {%for dean in deans%}
         <tr>
-            <td style="text-transform: none">{{dean.name}}</td>
+            <td style="text-transform: none">{{dean.name}}</a></td>
             <td style="text-transform: capitalize">{{dean.email}}</td>
             <td>{{dean.collegeWork}}</td>
             <td>{{dean.faculty}}%</td>
+            <td><a class="linktext" href={% url 'crudu' 'dean' dean.id%}>Update</a></td>
+            <td><a class="linktext" href={% url 'crudd' 'dean' dean.id%}>Delete</a></td>
         </tr>
     {% endfor %}
 </table>

@@ -1,0 +1,12 @@
+{% extends 'MainPage/pageTemplate.html' %}
+
+{% block content %}
+<div id="crudDiv">
+<span><form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Submit">
+</form></span>
+<span>{% include 'tables/degreeTable.html' %}</span>
+</div>
+{% endblock %}

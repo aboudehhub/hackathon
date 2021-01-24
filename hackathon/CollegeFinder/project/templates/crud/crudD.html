@@ -1,0 +1,11 @@
+{% extends 'MainPage/pageTemplate.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <h1>Are you sure you want to delete</h1>
+    <a class="linktext" href={% url 'home' %}>cancel</a>
+    <input type="submit" name"Confirm">
+</form>
+{% endblock %}

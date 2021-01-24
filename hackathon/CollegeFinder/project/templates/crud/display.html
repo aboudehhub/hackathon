@@ -1,0 +1,22 @@
+{% extends 'MainPage/pageTemplate.html' %}
+
+{% block content %}
+<div id="crudDiv">
+    <span>
+        <a class="linktext crud-btn" href={% url 'crudc' w%}>Create</a>
+    </span>
+    <span>
+        {% if w == 'college' %}
+        {% include 'tables/collegeTableCrud.html' %}
+        {% elif w == 'dean' %}
+        {% include 'tables/deanTable.html' %}
+        {% elif w == 'faculty' %}
+        {% include 'tables/facultyTable.html' %}
+        {% elif w == 'degree' %}
+        {% include 'tables/degreeTable.html' %}
+        {% elif w == 'job' %}
+        {% include 'tables/jobTable.html' %}
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

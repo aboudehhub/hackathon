@@ -7,12 +7,14 @@
   </tr>
   {%for degree in degrees%}
   <tr>
-    <td style="text-transform: none">{{degree.name}}</td>
+    <td style="text-transform: none">{{degree.name}}</a></td>
     <td>{{degree.faculty}}</td>
     <td>{{degree.preReq}}</td>
     <td>{% for job in degree.jobs.all %}
                     {{ job.name }}{% if not forloop.last %}, {% endif %}
                 {% endfor %}</td>
+    <td><a class="linktext" href={% url 'crudu' 'degree' degree.id%}>Update</a></td>
+    <td><a class="linktext" href={% url 'crudd' 'degree' degree.id%}>Delete</a></td>
   </tr>
   {% endfor %}
 </table>

@@ -43,9 +43,9 @@ class College(models.Model):
                                URLValidator()], default='http://127.0.0.1:8000/#')
     number = models.CharField(max_length=30, blank=True, null=True)
     graduationRate = models.DecimalField(
-        max_digits=5, decimal_places=2, validators=[MaxValueValidator(100), MinValueValidator(1)], blank=True, null=True)
+        max_digits=5, decimal_places=2, validators=[MaxValueValidator(100), MinValueValidator(0)], blank=True, null=True)
     acceptanceRate = models.DecimalField(max_digits=5, decimal_places=2, validators=[
-                                         MaxValueValidator(100), MinValueValidator(1)], blank=True, null=True)
+                                         MaxValueValidator(100), MinValueValidator(0)], blank=True, null=True)
     faculties = models.ManyToManyField(Facultie)
     degrees = models.ManyToManyField(Degree)
     deans = models.ManyToManyField(Dean)

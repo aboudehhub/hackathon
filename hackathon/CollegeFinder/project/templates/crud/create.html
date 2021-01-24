@@ -12,11 +12,11 @@
     <div id="cmain">
         <h1>CRUD!!</h1>
         <div class="container">
-            <a href="Colleges">Colleges</a>
-            <a href="Degrees">Degrees</a>
-            <a href="Faculties">Faculties</a>
-            <a href="Deans">Deans</a>
-            <a href="Jobs">Jobs</a>
+            <a href={% url 'crudw' 'college'%}>Colleges</a>
+            <a href={% url 'crudw' 'degree'%}>Degrees</a>
+            <a href={% url 'crudw' 'faculty'%}>Faculties</a>
+            <a href={% url 'crudw' 'dean'%}>Deans</a>
+            <a href={% url 'crudw' 'job'%}>Jobs</a>
         </div>
     </div>
 </body>

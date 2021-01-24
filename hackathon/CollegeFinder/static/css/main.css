@@ -26,7 +26,9 @@ ul {
   box-shadow: 0px -1px 5px #000;
   width: 100%;
 }
-li{margin: 0;}
+li {
+  margin: 0;
+}
 li:not(:last-child) {
   float: left;
   border-right: 1px solid var(--color-dark);
@@ -110,9 +112,9 @@ li:last-child {
   border-radius: 2px;
   outline: none;
   box-shadow: 0 1px 2px #000;
-  width: 70%
+  width: 70%;
 }
-#main #fun span{
+#main #fun span {
   width: 50%;
   display: flex;
   align-items: center;
@@ -151,6 +153,7 @@ tr:hover {
 }
 td {
   text-transform: lowercase;
+
 }
 #user {
   position: absolute;
@@ -174,4 +177,31 @@ td {
   border: 1px solid var(--color-dark);
   border-radius: 2px;
   box-shadow: 0 2px 3px #000;
+}
+#crudDiv {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2px;
+
+}
+#crudDiv span{
+  flex: 2;
+  min-width: 0;
+  margin: 10px;
+}
+#crudDiv span form{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2px;
+  width: max-content;
+}
+#crudDiv span form input[name="Submit"]{
+  grid-column: 1 / span 2;
+}
+#update{
+  transition: .2s ease-in-out;
+}
+#update:hover::before{
+  content: "Update ";
 }

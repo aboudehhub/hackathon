@@ -5,7 +5,9 @@
         <th>Phone number</th>
         <th>Graduation rate</th>
         <th>Acceptance rate</th>
-        <th>Faculties</th>
+        <th><a href={% url 'show' 'faculty'%}>Faculties</a></th>
+        <th><a href={% url 'show' 'degree'%}>Degrees</a></th>
+        <th><a href={% url 'show' 'dean'%}>Deans</a></th>
     </tr>
     {%for college in colleges%}
         <tr>
@@ -14,9 +16,15 @@
             <td>{{college.number}}</td>
             <td>{{college.graduationRate}}%</td>
             <td>{{college.acceptanceRate}}%</td>
-            <td>{% for faculty in facs %}
+            <td>{% for faculty in college.faculties.all %}
                     {{ faculty.name }}{% if not forloop.last %}, {% endif %}
                 {% endfor %}...</td>
+            <td>{% for degree in college.degrees.all %}
+                    {{ degree.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}...</td>  
+            <td>{% for dean in college.deans.all %}
+                    {{ dean.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}...</td>                              
         </tr>
     {% endfor %}
 </table>

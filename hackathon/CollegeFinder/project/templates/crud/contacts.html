@@ -12,9 +12,9 @@
     {%for contact in contacts%}
         <tr>
             <td style="text-transform: none">{{contact.fullName}}</a></td>
-            <td>{{contact.email}}</td>
+            <td><a style="color:#333;" href="mailto:{{contact.email}}">{{contact.email}}</a></td>
             <td>{{contact.phone}}</td>
-            <td>{{contact.questions}}%</td>
+            <td>{{contact.questions}}</td>
         </tr>
     {% endfor %}
 </table>

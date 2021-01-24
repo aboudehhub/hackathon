@@ -29,9 +29,6 @@ def ASearch(request):
 def Chats(request):
     return HttpResponse("Not Developped yet")
 
-def HowItWorks(request):
-    return render(request, "SidePages/howItWorks.html")
-
 def About(request):
     return render(request, "SidePages/about.html")
 
@@ -49,7 +46,7 @@ def ContactF(request):
 def Crud(request):
     return render(request, "crud/create.html")
 
-def Display(request, w):
+def CDisplay(request, w):
     context = {'w': w}
     if w == 'college':
         college = College.objects.all()
@@ -69,7 +66,27 @@ def Display(request, w):
     else:
         return render(request, 'crud/contacts.html', {'contacts': ContactFM.objects.all()})
 
-    return render(request, 'crud/display.html', context)
+    return render(request, 'crud/Cdisplay.html', context)
+
+def UDisplay(request, w):
+    context = {'w': w}
+    if w == 'college':
+        college = College.objects.all()
+        context['colleges'] = college
+    elif w == 'dean':
+        dean = Dean.objects.all()
+        context['deans'] = dean
+    elif w == 'faculty':
+        faculty = Facultie.objects.all()
+        context['faculties'] = faculty
+    elif w == 'degree':
+        degree = Degree.objects.all()
+        context['degrees'] = degree
+    elif w == 'job':
+        job = Job.objects.all()
+        context['jobs'] = job
+
+    return render(request, 'MainPage/Udisplay.html', context)
 
 def Create(request, what):
     if what == 'college':

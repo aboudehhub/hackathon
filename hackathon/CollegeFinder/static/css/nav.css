@@ -1,0 +1,24 @@
+ul {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0;
+  width: 10%;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: auto;
+  border-right: 1px solid #000;
+  box-shadow: 2px 0 5px #000;
+}
+li{
+  border-bottom: 1px solid #000;
+}
+
+li:last-child{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #000;
+}

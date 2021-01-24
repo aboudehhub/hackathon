@@ -35,22 +35,6 @@ html {
   align-items: center;
   width: 50%;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 10%;
-  background-color: #f1f1f1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  overflow: auto;
-}
-
-li:last-child{
-  float: down;
-}
 
 .linktext {
   display: block;
@@ -125,7 +109,6 @@ svg{margin:0 !important;}
   margin: 0;
   font-size: 8vw;
   letter-spacing: -0.6vw;
-  word-spacing: -1.5vw;
   text-decoration: none;
   color: var(--color-dark);
 }
@@ -148,6 +131,9 @@ th {
 }
 th {
   background-color: var(--color-dark);
+  color: var(--color-light);
+}
+th a{
   color: var(--color-light);
 }
 tr:not(:nth-child(even)) {

@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Degrees</th>
+        <th>CRUD</th>
+        <th>CRUD</th>
+    </tr>
+    {%for faculty in faculties%}
+        <tr>
+            <td style="text-transform: capitalize">{{faculty.name}}</a></td>
+            <td>{% for degree in faculty.degrees.all %}
+                    {{ degree.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}</td>
+            <td><a class="linktext" href={% url 'crudu' 'faculty' faculty.id%}>Update</a></td>
+            <td><a class="linktext" href={% url 'crudd' 'faculty' faculty.id%}>Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>

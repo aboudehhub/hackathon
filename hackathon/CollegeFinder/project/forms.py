@@ -1,4 +1,5 @@
 from django.forms import ModelForm, fields
+from django import forms
 from .models import *
 
 
@@ -30,3 +31,11 @@ class DeanForm(ModelForm):
     class Meta:
         model = Dean
         fields = '__all__'
+
+class ContactForm(ModelForm):
+    class Meta:
+        model = ContactFM
+        fields = '__all__'
+        widgets = {
+            'questions': forms.Textarea()
+        }

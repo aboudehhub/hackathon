@@ -13,16 +13,13 @@
 <body>
     <div id="main">
         <div id="user">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg">
-            <span>obama</span>
+            <a class="linktext" href={% url 'contactf' %}>send contact form</a>
         </div>
-        <p class="logo">College Finder</p>
+        <p id="logo"><a href="/">College Finder</a></p>
         {% block content %}
         
         
         {% endblock%}
-
-        {% include 'MainPage/navBar.html' %}
     </div>
 </body>
 

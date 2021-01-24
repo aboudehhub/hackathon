@@ -20,24 +20,31 @@ def ASearch(request):
     MyFilter = MainFilter(request.GET, queryset=colleges)
     colleges = MyFilter.qs
     MyFilter2 = AFilter(request.GET, queryset=colleges)
+    print(MyFilter2.qs)
     colleges = MyFilter2.qs
+    
     context = {'colleges':colleges,'MFilter': MyFilter, 'AFilter': MyFilter2}
     return render(request, "MainPage/ASearch.html", context)
 
 def Chats(request):
-    return HttpResponse("Chats")
+    return HttpResponse("Not Developped yet")
 
 def HowItWorks(request):
-    return HttpResponse("How It Works")
+    return render(request, "SidePages/howItWorks.html")
 
 def About(request):
-    return HttpResponse("About")
+    return render(request, "SidePages/about.html")
 
-def Register(request):
-    return render(request, "Users/register.html")
-
-def Login(request):
-    return render(request, "Users/login.html")
+def ContactF(request):
+    form = ContactForm()
+    
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+    context = {'form':form}
+    return render(request, "crud/contactf.html", context)
 
 def Crud(request):
     return render(request, "crud/create.html")
@@ -59,6 +66,8 @@ def Display(request, w):
     elif w == 'job':
         job = Job.objects.all()
         context['jobs'] = job
+    else:
+        return render(request, 'crud/contacts.html', {'contacts': ContactFM.objects.all()})
 
     return render(request, 'crud/display.html', context)
 
@@ -76,7 +85,7 @@ def Create(request, what):
             form = DeanForm(request.POST)
             if form.is_valid():
                 form.save()
-                return redirect('/')
+                return redirect('.')
     elif what == 'faculty':
         form = FacultyForm()
         if request.method == "POST":
@@ -98,7 +107,7 @@ def Create(request, what):
             if form.is_valid():
                 form.save()
                 return redirect('/')
-    context = {'form': form}
+    context = {'form': form, 'what': what}
     return render(request, "crud/crudC.html", context)
 
 
@@ -107,15 +116,15 @@ def Update(request, what, pk):
         college = College.objects.get(id=pk)
         form = CollegeForm(instance=college)
         if request.method == "POST":
-            form = FacultyForm(request.POST, instance=college)
+            form = CollegeForm(request.POST, instance=college)
             if form.is_valid():
                 form.save()
                 return redirect('/')
     elif what == 'dean':
         dean = Dean.objects.get(id=pk)
-        form = DeanForm(dean)
+        form = DeanForm(instance=dean)
         if request.method == "POST":
-            form = FacultyForm(request.POST, instance=dean)
+            form = DeanForm(request.POST, instance=dean)
             if form.is_valid():
                 form.save()
                 return redirect('/')
@@ -131,7 +140,7 @@ def Update(request, what, pk):
         degree = Degree.objects.get(id=pk)
         form = DegreeForm(instance=degree)
         if request.method == "POST":
-            form = FacultyForm(request.POST, instance=degree)
+            form = DegreeForm(request.POST, instance=degree)
             if form.is_valid():
                 form.save()
                 return redirect('/')
@@ -139,12 +148,12 @@ def Update(request, what, pk):
         job = Job.objects.get(id=pk)
         form = JobForm(instance=job)
         if request.method == "POST":
-            form = FacultyForm(request.POST, instance=job)
+            form = JobForm(request.POST, instance=job)
             if form.is_valid():
                 form.save()
                 return redirect('/')
-    context = {'form': form}
-    return render(request, "crud/crudC.html", context)
+    context = {'form': form, 'what': what}
+    return render(request, "crud/crudU.html", context)
     
 def Delete(request, what, pk):
     if what == 'college':
@@ -172,4 +181,4 @@ def Delete(request, what, pk):
         if request.method == "POST":
             job.delete()
             return redirect('/')
-    return render(request, "crud/crudC.html")
+    return render(request, "crud/crudD.html", {'what': what})

@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Average Salary</th>
+        <th>Required Degree</th>
+        <th>CRUD</th>
+        <th>CRUD</th>
+    </tr>
+    {%for job in jobs%}
+        <tr>
+            <td style="text-transform: none">{{job.name}}</a></td>
+            <td style="text-transform: capitalize">{{job.avgSalary}}</td>
+            <td>{{job.reqDegree}}</td>
+            <td><a class="linktext" href={% url 'crudu' 'job' job.id%}>Update</a></td>
+            <td><a class="linktext" href={% url 'crudd' 'job' job.id%}>Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>

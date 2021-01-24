@@ -15,6 +15,12 @@ html {
   display: flex;
   align-items: center;
 }
+#main{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
 #cmain {
   position: fixed;
   top: 50%;
@@ -46,8 +52,133 @@ html {
   box-shadow: 0 2px 3px #000;
   transition: 0.2s ease-in-out;
 }
-#cmain div a:hover{
-    margin: 10px;
-    background-color: var(--color-dark);
-    color: var(--color-light);
+#cmain div a:hover {
+  margin: 10px;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+#contact {
+  background-color: var(--color-dark) !important;
+  color: var(--color-light) !important;
+}
+#contact:hover {
+  background-color: var(--color-light) !important;
+  color: var(--color-dark) !important;
+}
+
+form {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2px;
+  text-align: center;
+  border: 1px solid var(--color-dark);
+  border-radius: 5px;
+  box-shadow: 0 2px 3px #000;
+  height: auto;
+}
+form label {
+  font-weight: bold;
+  color: var(--color-dark);
+}
+form input,
+select,
+textarea {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--color-dark);
+  outline: none;
+  box-shadow: 0 2px 3px #000;
+  text-align: center;
+  justify-content: center;
+}
+form input[type='submit'] {
+  grid-column: 1 / span 2;
+}
+form input[type='submit']:hover {
+  cursor: pointer;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+#logo {
+  margin: 0;
+  font-size: 8vw;
+  letter-spacing: -0.6vw;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+#logo a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+#del{
+  width: 50%;
+  margin-left: 120px;
+}
+#del{
+  font-size: 2rem;
+}
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-bottom: 20px;
+}
+td,
+th {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 8px;
+  font-weight: bolder;
+}
+th {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+tr:not(:nth-child(even)) {
+  background-color: var(--color-light);
+}
+tr:nth-child(even) {
+  background-color: #fff;
+}
+tr:hover {
+  background-color: rgb(236, 236, 236);
+}
+td {
+  text-transform: lowercase;
+  overflow: hidden;
+}
+#crudDiv {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2px;
+}
+#crudDiv span {
+  flex: 2;
+  min-width: 0;
+  margin: 10px;
+}
+#crudDiv span form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2px;
+  width: max-content;
+}
+#crudDiv span form input[name='Submit'] {
+  grid-column: 1 / span 2;
+}
+.linktext {
+  display: block;
+  background-color: #efefef;
+  color: var(--color-dark);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5vw;
+}
+.linktext:hover {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  text-decoration: underline;
+  cursor: pointer;
 }

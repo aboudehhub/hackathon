@@ -1,0 +1,22 @@
+{% extends 'MainPage/pageTemplate.html' %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone number</th>
+        <th>Questions</th>
+    </tr>
+    {%for contact in contacts%}
+        <tr>
+            <td style="text-transform: none">{{contact.fullName}}</a></td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.questions}}%</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

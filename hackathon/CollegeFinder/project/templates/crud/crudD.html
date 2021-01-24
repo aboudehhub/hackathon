@@ -1,11 +1,9 @@
-{% extends 'MainPage/pageTemplate.html' %}
-
-{% block content %}
-
-<form action="" method="POST">
+{%load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/crud.css' %}">
+<div id="main">
+<p id="logo"><a href="/">Delete {{what}}?</a></p>
+<form id="del" action="" method="POST">
     {% csrf_token %}
-    <h1>Are you sure you want to delete</h1>
-    <a class="linktext" href={% url 'home' %}>cancel</a>
-    <input type="submit" name"Confirm">
+    <input type="submit" name="Are you Sure?" value="are you sure?">
 </form>
-{% endblock %}
+</div>

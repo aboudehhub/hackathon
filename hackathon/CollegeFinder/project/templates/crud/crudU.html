@@ -1,7 +1,7 @@
 {%load static %}
 <link rel="stylesheet" type="text/css" href="{% static '/css/crud.css' %}">
 <div id="main">
-<p id="logo"><a href="/">Create {{what}}</a></p>
+<p id="logo"><a href="/">Update {{what}}</a></p>
 <form action="" method="POST">
     {% csrf_token %}
     {{form}}

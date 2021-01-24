@@ -6,8 +6,6 @@
         <th>Graduation rate</th>
         <th>Acceptance rate</th>
         <th>Faculties</th>
-        <th>CRUD</th>
-        <th>CRUD</th>
     </tr>
     {%for college in colleges%}
         <tr>
@@ -16,11 +14,9 @@
             <td>{{college.number}}</td>
             <td>{{college.graduationRate}}%</td>
             <td>{{college.acceptanceRate}}%</td>
-            <td>{% for faculty in college.faculties.all %}
+            <td>{% for faculty in facs %}
                     {{ faculty.name }}{% if not forloop.last %}, {% endif %}
-                {% endfor %}</td>
-            <td><a class="linktext" href={% url 'crudu' 'college' college.id%}>Update</a></td>
-            <td><a class="linktext" href={% url 'crudd' 'college' college.id%}>Delete</a></td>
+                {% endfor %}...</td>
         </tr>
     {% endfor %}
 </table>

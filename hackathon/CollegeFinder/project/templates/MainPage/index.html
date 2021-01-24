@@ -1,13 +1,15 @@
 {% extends 'MainPage/pageTemplate.html' %}
 
 {% block content %}
+<div id="searchbar">
 <form id="search" method="get" role="search">
   {{MFilter.form}}
   <button type="submit">{%include "MainPage/searchIcon.html"%}</button>
 </form>
-<div id="fun">
-  <span class="ffun"><a class="linktext" href="ASearch">advanced search</a></span>
-  <span class="ffun"><a class="linktext" href="crud">CRUD!</a></span>
+<span class="ffun"><a class="linktext" href="ASearch">advanced search</a></span>
+{% include 'tables/userTables/collegeTable.html' %}
 </div>
-{% include 'tables/collegeTable.html' %}
+<div id="nav">
+{% include 'MainPage/navBar.html' %}
+</div>
 {% endblock%}

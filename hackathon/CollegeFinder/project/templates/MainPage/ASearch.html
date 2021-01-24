@@ -4,9 +4,16 @@
 
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static '/css/ASearch.css' %}" />
+<div id="Asearchbar">
+<span>
 <form id="Asearch" method="get" role="search">
   {{MFilter.form}} {{AFilter.form}}
   <button type="submit">{%include "MainPage/searchIcon.html"%}</button>
 </form>
-{% include 'tables/collegeTable.html' %}
+</span>
+<span>
+{% include 'tables/userTables/collegeTable.html' %}
+</span>
+</div>
+{% include 'MainPage/navBar.html' %}
 {% endblock %}

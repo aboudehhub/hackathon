@@ -1,22 +1,23 @@
-{% extends 'MainPage/pageTemplate.html' %}
-
-{% block content %}
+{%load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/crud.css' %}">
+<div id="main">
+<p id="logo"><a href="/">Display {{w}}</a></p>
 <div id="crudDiv">
     <span>
         <a class="linktext crud-btn" href={% url 'crudc' w%}>Create</a>
     </span>
     <span>
         {% if w == 'college' %}
-        {% include 'tables/collegeTableCrud.html' %}
+        {% include 'tables/crudTables/collegeTableCrud.html' %}
         {% elif w == 'dean' %}
-        {% include 'tables/deanTable.html' %}
+        {% include 'tables/crudTables/deanTableCrud.html' %}
         {% elif w == 'faculty' %}
-        {% include 'tables/facultyTable.html' %}
+        {% include 'tables/crudTables/facultyTableCrud.html' %}
         {% elif w == 'degree' %}
-        {% include 'tables/degreeTable.html' %}
+        {% include 'tables/crudTables/degreeTableCrud.html' %}
         {% elif w == 'job' %}
-        {% include 'tables/jobTable.html' %}
+        {% include 'tables/crudTables/jobTableCrud.html' %}
         {% endif %}
     </span>
 </div>
-{% endblock %}
+</div>
